@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+
   {
     path: '',
     redirectTo: 'login',
@@ -15,21 +16,33 @@ export const routes: Routes = [
   },
 
   {
-    path: 'dashboard',
+    path: '',
     loadComponent: () =>
-      import('./features/dashboard/dashboard/dashboard')
-        .then(m => m.Dashboard)
-  },
+      import('./layouts/admin-layout/admin-layout')
+        .then(m => m.AdminLayout),
 
-  {
-    path: 'students',
-    loadComponent: () =>
-      import('./features/students/student-list/student-list')
-        .then(m => m.StudentList)
+    children: [
+
+      {
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./features/dashboard/dashboard/dashboard')
+            .then(m => m.Dashboard)
+      },
+
+      {
+        path: 'students',
+        loadComponent: () =>
+          import('./features/students/student-list/student-list')
+            .then(m => m.StudentList)
+      }
+
+    ]
   },
 
   {
     path: '**',
     redirectTo: 'login'
   }
+
 ];
