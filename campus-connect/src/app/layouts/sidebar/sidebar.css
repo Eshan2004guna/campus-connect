@@ -1,0 +1,41 @@
+.sidebar{
+  width:260px;
+  height:100vh;
+  background:#0f172a;
+  color:white;
+  padding:20px;
+  position:fixed;
+  left:0;
+  top:0;
+}
+
+.logo{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.logo h2{
+  color:white;
+}
+
+ul{
+  list-style:none;
+  padding:0;
+}
+
+li{
+  margin-bottom:12px;
+}
+
+a{
+  display:block;
+  padding:12px;
+  border-radius:8px;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+a:hover{
+  background:#1e293b;
+}
